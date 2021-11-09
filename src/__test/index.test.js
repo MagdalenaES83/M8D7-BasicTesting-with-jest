@@ -7,13 +7,13 @@ dotenv.config();
 
 const request = supertest(app);
 
-describe("Testing the testing environment", () => {
-  it("should test that true is true", () => {
+describe("testing environment", () => {
+  it(" true is true", () => {
     expect(true).toBe(true);
   });
 });
 
-describe("Testing the server", () => {
+describe("testing the server", () => {
   beforeAll((done) => {
     mongoose.connect(process.env.MONGO_URL_TEST).then(() => {
       console.log("Connected to Atlas");
@@ -32,25 +32,25 @@ describe("Testing the server", () => {
   });
 
   
-  test("should test that the /test endpoint is OK", async () => {
+  test("test endpoint is OK", async () => {
     const response = await request.get("/test");
 
     expect(response.status).toBe(200);
     expect(response.body.message).toBe("Test success");
   });
 
-  it("should test that a /nonexistnt endpoint is returning 404", async () => {
+  it("no-existnt endpoint  returns 404", async () => {
     const response = await request.get("/not-existing");
 
     expect(response.status).toBe(404);
   });
 
   const validProduct = {
-    name: "iPhone",
-    price: 900,
+    name: "Motorolla",
+    price: 200,
   };
 
-  it("should test that a POST /products is returning us a valid product", async () => {
+  it("should test that a POST or products is returning us a valid product", async () => {
     const response = await request.post("/products").send(validProduct);
 
     expect(response.status).toBe(201);
