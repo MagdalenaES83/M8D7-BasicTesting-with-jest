@@ -23,6 +23,8 @@ productsRouter.post('/', async (req, res) => {
     }
 )
 
+
+
 productsRouter.get('/:id', async (req, res) => {
     const products = await ProductModel.find({});
 

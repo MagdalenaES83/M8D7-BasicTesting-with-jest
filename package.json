@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.3",
-    "express-list-endpoints": "^6.0.0"
+    "express-list-endpoints": "^6.0.0",
+    "supertest": "^6.1.6"
   }
 }
